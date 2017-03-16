@@ -11,14 +11,10 @@ RUN yum install -y php.x86_64 php-gd.x86_64 php-pdo.x86_64 php-mysqlnd.x86_64 ph
     yum clean all
 
 # -----------------------------------------------------------------------------
-# Install php phalcon module
+# Install ssmtp from epel
 # -----------------------------------------------------------------------------
-RUN yum install -y php-devel pcre-devel gcc make git && \
-    git clone --depth=1 git://github.com/phalcon/cphalcon.git && \
-    cd cphalcon/build && \
-    ./install && \
-    echo "extension=phalcon.so" > /etc/php.d/phalcon.ini && \
-    yum remove -y php-devel pcre-devel gcc make git && \
+RUN yum -y install epel-release && \
+    yum -y install ssmtp && \
     yum clean all
 
 # -----------------------------------------------------------------------------
