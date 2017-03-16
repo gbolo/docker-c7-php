@@ -7,7 +7,9 @@ EXPOSE 80 443
 # -----------------------------------------------------------------------------
 # Install php with some modules
 # -----------------------------------------------------------------------------
-RUN yum install -y php.x86_64 php-gd.x86_64 php-pdo.x86_64 php-mysqlnd.x86_64 php-pgsql.x86_64 php-snmp.x86_64 php-xml.x86_64 php-soap.x86_64 php-xmlrpc.x86_64 \
+RUN yum install -y php.x86_64 php-gd.x86_64 php-pdo.x86_64 php-mysqlnd.x86_64 \
+    php-pgsql.x86_64 php-snmp.x86_64 php-xml.x86_64 php-soap.x86_64 \
+    php-xmlrpc.x86_64 && \
     yum clean all
 
 # -----------------------------------------------------------------------------
